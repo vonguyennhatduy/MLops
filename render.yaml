@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: titanic-fastapi
+    env: docker
+    region: singapore
+    plan: free
+    dockerfilePath: Dockerfile
+    buildCommand: ""
+    startCommand: ""
+    autoDeploy: true
