@@ -4,18 +4,15 @@ from pydantic import BaseModel
 import joblib
 import pandas as pd
 
-# Load pipeline đã lưu (gồm cả preprocessing và model)
 try:
     model = joblib.load("logistic_final_titanic.pkl")
 except FileNotFoundError:
     model = None
     print("❌ Model not found. Đảm bảo file logistic_final_titanic.pkl tồn tại.")
 
-# Khởi tạo ứng dụng FastAPI
 app = FastAPI(
     title="Titanic Survived Prediction API",
     description="API dự đoán hành khách sống sót trên tàu Titanic",
-    version="1.0"
 )
 
 class PassengerInput(BaseModel):
